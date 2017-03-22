@@ -1,5 +1,6 @@
-# ai2-2017
-Plik list1.py
+# Aplikacje internetowe II / Python / 2017
+
+# Plik list1.py
 
 match_ends
  OK  got: 3 expected: 3
@@ -14,7 +15,7 @@ sort_last
  OK  got: [(3, 1), (1, 2), (2, 3)] expected: [(3, 1), (1, 2), (2, 3)]
  OK  got: [(2, 2), (1, 3), (3, 4, 5), (1, 7)] expected: [(2, 2), (1, 3), (3, 4, 5), (1, 7)]
 
-Plik list2.py
+# Plik list2.py
 
 remove_adjacent
  OK  got: [1, 2, 3] expected: [1, 2, 3]
@@ -25,7 +26,7 @@ linear_merge
  OK  got: ['aa', 'bb', 'cc', 'xx', 'zz'] expected: ['aa', 'bb', 'cc', 'xx', 'zz']
  OK  got: ['aa', 'aa', 'aa', 'bb', 'bb'] expected: ['aa', 'aa', 'aa', 'bb', 'bb']
 
-Plik string1.py
+# Plik string1.py
 
 donuts
  OK  got: 'Number of donuts: 4' expected: 'Number of donuts: 4'
@@ -48,7 +49,7 @@ mix_up
  OK  got: 'spash gnort' expected: 'spash gnort'
  OK  got: 'fizzy perm' expected: 'fizzy perm'
 
-Plik string2.py
+# Plik string2.py
 
 verbing
  OK  got: 'hailing' expected: 'hailing'
