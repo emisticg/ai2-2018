@@ -35,7 +35,8 @@ def collatz(number):
             collatz(number)
 
 def ftoc(temp):
-    celsius = 
+    celsius = (temp - 32) * (5/9)
+    print(celsius)
     
 
-collatz(999)
+ftoc(88)
