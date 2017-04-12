@@ -120,4 +120,14 @@ ftoc(243)
     print(s)
       Wynik: [[1], [1], [1]]
 
+
+    def gcd(a, b):
+      while b != 0:
+          (a, b) = (b, a % b)
+      print(a)
+    
+        gcd(10, 25) => 5
+        gcd(14, 15) => 1
+        gcd(3, 9) => 3
+        gcd(1, 1) => 1
 ```
