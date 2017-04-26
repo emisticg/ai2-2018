@@ -204,3 +204,39 @@ def keyword_args(a, b=1, c='X', d=None):
     c: 7
     d: None
     keyword_args(5,2,b=4) => BŁĄD - podwójna deklaracja argumentu b
+
+def variadic(*args, **kwargs):
+    print("Positional:", args)
+    print("Keyword:", kwargs)
+    
+    variadic(2,3,5,7)
+    Positional: (2, 3, 5, 7)
+    Keyword: {}
+    variadic(1,1,n=1)
+    Positional: (1, 1)
+    Keyword: {'n': 1}
+    variadic(n=1,2,3)
+    SyntaxError: positional argument follows keyword argument
+    variadic()
+    Positional: ()
+    Keyword: {}
+    variadic(cs="Computer Science", pd="Product Design")
+    Positional: ()
+    Keyword: {'pd': 'Product Design', 'cs': 'Computer Science'}
+    variadic(cs="Computer Science", cs="CompSci", cs="CS")
+    SyntaxError: keyword argument repeated
+    variadic(5,8,k=1,swap=2)
+    Positional: (5, 8)
+    Keyword: {'swap': 2, 'k': 1}
+    variadic(8, *[3, 4, 5], k=1, **{'a':5, 'b':'x'})
+    Positional: (8, 3, 4, 5)
+    Keyword: {'a': 5, 'b': 'x', 'k': 1}
+    variadic(*[8, 3], *[4, 5], k=1, **{'a':5, 'b':'x'})
+    Positional: (8, 3, 4, 5)
+    Keyword: {'a': 5, 'b': 'x', 'k': 1}
+    variadic(*[3, 4, 5], 8, *(4, 1), k=1, **{'a':5, 'b':'x'})
+    Positional: (3, 4, 5, 8, 4, 1)
+    Keyword: {'a': 5, 'b': 'x', 'k': 1}
+    variadic({'a':5, 'b':'x'}, *{'a':5, 'b':'x'}, **{'a':5, 'b':'x'})
+    Positional: ({'a': 5, 'b': 'x'}, 'a', 'b')
+    Keyword: {'a': 5, 'b': 'x'}
