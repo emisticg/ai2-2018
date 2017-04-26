@@ -215,16 +215,14 @@ def variadic(*args, **kwargs):
     variadic(1,1,n=1)
     Positional: (1, 1)
     Keyword: {'n': 1}
-    variadic(n=1,2,3)
-    SyntaxError: positional argument follows keyword argument
+    variadic(n=1,2,3) => BŁĄD - liczba pozycyjna umiejscowiona za słowem kluczowym
     variadic()
     Positional: ()
     Keyword: {}
     variadic(cs="Computer Science", pd="Product Design")
     Positional: ()
     Keyword: {'pd': 'Product Design', 'cs': 'Computer Science'}
-    variadic(cs="Computer Science", cs="CompSci", cs="CS")
-    SyntaxError: keyword argument repeated
+    variadic(cs="Computer Science", cs="CompSci", cs="CS") => BŁĄD - powtarzanie argumentów
     variadic(5,8,k=1,swap=2)
     Positional: (5, 8)
     Keyword: {'swap': 2, 'k': 1}
