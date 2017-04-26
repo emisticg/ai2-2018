@@ -131,3 +131,22 @@ ftoc(243)
         gcd(3, 9) => 3
         gcd(1, 1) => 1
 ```
+
+## Plik lab3-functions.py
+```
+def print_two(a,b):
+    print("Arguments: {0} and {1}".format(a,b))
+
+   print_two() => brakuje dwóch argumentów
+   print_two(4,1) => Arguments: 4 and 1
+   print_two(41) => brak argumentu b
+   print_two(a=4, 1) => błąd
+   print_two(4, a=1) => podwójny argument a
+   print_two(4, 1, 1) => za dużo argumentów
+   print_two(b=4, 1) => błąd
+   print_two(a=4, b=1) => Arguments: 4 and 1
+   print_two(b=1, a=4) => Arguments: 4 and 1
+   print_two(1, a=1) => podwójnie zadeklarowany argument a
+   print_two(4, 1, b=1) => podwójnie zadeklarowany argument b
+
+
