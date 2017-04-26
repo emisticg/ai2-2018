@@ -137,16 +137,70 @@ ftoc(243)
 def print_two(a,b):
     print("Arguments: {0} and {1}".format(a,b))
 
-   print_two() => brakuje dwóch argumentów
-   print_two(4,1) => Arguments: 4 and 1
-   print_two(41) => brak argumentu b
-   print_two(a=4, 1) => błąd
-   print_two(4, a=1) => podwójny argument a
-   print_two(4, 1, 1) => za dużo argumentów
-   print_two(b=4, 1) => błąd
-   print_two(a=4, b=1) => Arguments: 4 and 1
-   print_two(b=1, a=4) => Arguments: 4 and 1
-   print_two(1, a=1) => podwójnie zadeklarowany argument a
-   print_two(4, 1, b=1) => podwójnie zadeklarowany argument b
+    print_two() => brakuje dwóch argumentów
+    print_two(4,1) => Arguments: 4 and 1
+    print_two(41) => brak argumentu b
+    print_two(a=4, 1) => błąd
+    print_two(4, a=1) => podwójny argument a
+    print_two(4, 1, 1) => za dużo argumentów
+    print_two(b=4, 1) => błąd
+    print_two(a=4, b=1) => Arguments: 4 and 1
+    print_two(b=1, a=4) => Arguments: 4 and 1
+    print_two(1, a=1) => podwójnie zadeklarowany argument a
+    print_two(4, 1, b=1) => podwójnie zadeklarowany argument b
 
+def keyword_args(a, b=1, c='X', d=None):
+    print("a:", a)
+    print("b:", b)
+    print("c:", c)
+    print("d:", d)
 
+    keyword_args(5)
+    a: 5
+    b: 1
+    c: X
+    d: None
+    keyword_args(a=5)
+    a: 5
+    b: 1
+    c: X
+    d: None
+    keyword_args(5,8)
+    a: 5
+    b: 8
+    c: X
+    d: None
+    keyword_args(5,2,c=4)
+    a: 5
+    b: 2
+    c: 4
+    d: None
+    keyword_args(5,0,1)
+    a: 5
+    b: 0
+    c: 1
+    d: None
+    keyword_args(5,2,d=8,c=4)
+    a: 5
+    b: 2
+    c: 4
+    d: 8
+    keyword_args(5,2,0,1,"") => BŁĄD - za dużo argumentów
+    keyword_args(c=7,1) => BŁĄD - positional argument follows keyword argument
+    keyword_args(c=7,a=1)
+    a: 1
+    b: 1
+    c: 7
+    d: None
+    keyword_args(5,2,[],5)
+    a: 5
+    b: 2
+    c: []
+    d: 5
+    keyword_args(1,7,e=6) => BŁĄD - argument e nie istnieje
+    keyword_args(1,c=7)
+    a: 1
+    b: 1
+    c: 7
+    d: None
+    keyword_args(5,2,b=4) => BŁĄD - podwójna deklaracja argumentu b
