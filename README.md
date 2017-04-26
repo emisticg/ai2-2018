@@ -238,3 +238,33 @@ def variadic(*args, **kwargs):
     variadic({'a':5, 'b':'x'}, *{'a':5, 'b':'x'}, **{'a':5, 'b':'x'})
     Positional: ({'a': 5, 'b': 'x'}, 'a', 'b')
     Keyword: {'a': 5, 'b': 'x'}
+    
+def speak_excitedly(a,b=1, c=False):
+    a += '!' * b
+    if (c==True):
+        print(a.upper())
+    else:
+        print(a)
+        
+    speak_excitedly("Tymek", 2, True) => TYMEK!!
+
+def average(*a):
+    if not a:
+        print(None)
+    else:
+        print(sum(a)/len(a))
+   
+    average() => None
+    average(1,76,23,5) => 26.25
+
+def say_hello():
+    print("Hello!")
+
+    print(say_hello()) => Hello!
+
+def echo(arg=None):
+    print("arg:", arg)
+    return arg
+
+    print(echo()) => None
+    print(echo(5)) => arg: None
